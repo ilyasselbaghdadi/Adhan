@@ -7,7 +7,7 @@ from time import sleep
 parameters = {
                 "latitude": "45.480929",
                 "longitude": "-73.440443"}
-def set_times() -> list[dict,list[int]]:
+def set_times() -> list:
     weird_time = datetime.datetime.now()
     current_time = datetime.datetime.strftime(weird_time, "%d-%m-%y")
     prayer_data = requests.get(f"https://api.aladhan.com/v1/timings/{current_time}",parameters)
