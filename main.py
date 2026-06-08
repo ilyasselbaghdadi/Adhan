@@ -2,12 +2,12 @@ import datetime
 import json
 import requests
 from playsound3 import playsound # type: ignore
-from pyttsx3 import speak
+from pyttsx3 import speak # type: ignore
 from time import sleep
 parameters = {
                 "latitude": "45.480929",
                 "longitude": "-73.440443"}
-def set_times():
+def set_times() -> list[dict,list[int]]:
     weird_time = datetime.datetime.now()
     current_time = datetime.datetime.strftime(weird_time, "%d-%m-%y")
     prayer_data = requests.get(f"https://api.aladhan.com/v1/timings/{current_time}",parameters)
