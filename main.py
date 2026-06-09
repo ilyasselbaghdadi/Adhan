@@ -2,7 +2,7 @@ import datetime as dt
 import requests
 from json import loads
 from time import sleep
-from winsound import PlaySound, Beep
+from winsound import PlaySound, Beep, SND_FILENAME
 parameters:dict = {
                 "latitude": "45.480929",
                 "longitude": "-73.440443"}
@@ -28,6 +28,6 @@ while True:
     if time == "00:00":
         prayer_dict, prayer_times = set_times()
     if time in prayer_times:
-        PlaySound("Abdul-Basit.wav",winsound.SND_FILENAME) # type: ignore
+        PlaySound("Abdul-Basit.wav",SND_FILENAME) # type: ignore
     sleep(60)
 
